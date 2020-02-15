@@ -31,6 +31,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>2846CB21-B4E1-49D8-B760-C072C35FBB70</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>703B456B-041A-4780-B67C-011055337490</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>74B5AEA1-6AFC-4867-A76D-0FD11694A60D</key>
 		<array>
 			<dict>
@@ -334,6 +347,51 @@ fi</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>103</integer>
+				<key>script</key>
+				<string>date=$(date +%Y-%m-%d\ \(%A\))
+open "bear://x-callback-url/create?title=$date&amp;text=#0. Operational/Daily Notes#"</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>703B456B-041A-4780-B67C-011055337490</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>bnd</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string>New Bear Daily Note</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>2846CB21-B4E1-49D8-B760-C072C35FBB70</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string># Bear Alfred Workflow
@@ -360,6 +418,13 @@ To install, download a released alfred-bear.alfredworkflow and double-click to o
 			<key>ypos</key>
 			<integer>70</integer>
 		</dict>
+		<key>2846CB21-B4E1-49D8-B760-C072C35FBB70</key>
+		<dict>
+			<key>xpos</key>
+			<integer>370</integer>
+			<key>ypos</key>
+			<integer>770</integer>
+		</dict>
 		<key>3EEAE449-6872-465D-A3DD-A4F94C87A171</key>
 		<dict>
 			<key>xpos</key>
@@ -373,6 +438,13 @@ To install, download a released alfred-bear.alfredworkflow and double-click to o
 			<integer>660</integer>
 			<key>ypos</key>
 			<integer>310</integer>
+		</dict>
+		<key>703B456B-041A-4780-B67C-011055337490</key>
+		<dict>
+			<key>xpos</key>
+			<integer>660</integer>
+			<key>ypos</key>
+			<integer>770</integer>
 		</dict>
 		<key>74B5AEA1-6AFC-4867-A76D-0FD11694A60D</key>
 		<dict>
