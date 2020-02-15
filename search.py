@@ -78,7 +78,6 @@ def execute_search_query(args):
         LOGGER.debug('Searching tags')
         query = query.replace('#', '')
         tag_results = queries.search_tags_by_title(WORKFLOW, LOGGER, query)
-        note_results = queries.search_notes_by_tag_title(WORKFLOW, LOGGER, query)
         if not tag_results:
             WORKFLOW.add_item('No search results found.')
         else:
@@ -88,16 +87,12 @@ def execute_search_query(args):
                 LOGGER.debug(tag_arg)
                 WORKFLOW.add_item(title='#' + tag_result[0], subtitle="Open tag",
                                   arg=tag_arg, valid=True)
-            for note_result in note_results:
-                LOGGER.debug(note_results)
-                note_arg = ':n:' + note_result[0]
-                WORKFLOW.add_item(title=note_result[1], subtitle="Open note",
-                                  arg=note_arg, valid=True)
 
     else:
         LOGGER.debug('Searching notes')
         title_results = queries.search_notes_by_title(WORKFLOW, LOGGER, query)
         text_results = queries.search_notes_by_text(WORKFLOW, LOGGER, query)
+        note_results = queries.search_notes_by_tag_title(WORKFLOW, LOGGER, query)
         if not title_results and not text_results:
             WORKFLOW.add_item('No search results found.')
         else:
@@ -110,6 +105,11 @@ def execute_search_query(args):
                 if text_result[0] not in note_ids:
                     LOGGER.debug(text_result)
                     WORKFLOW.add_item(title=text_result[1], subtitle="Open note", arg=text_result[0], valid=True)
+            for note_result in note_results:
+                LOGGER.debug(note_results)
+                note_arg = ':n:' + note_result[0]
+                WORKFLOW.add_item(title=note_result[1], subtitle="Open note",
+                                  arg=note_arg, valid=True)
 
 
 if __name__ == '__main__':
